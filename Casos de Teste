@@ -1,0 +1,72 @@
+Casos de teste
+
+1. Aplicar cupom fretegratis com cep informado
+Acessar a home - Página home deve ser exibida
+Clicar no primeiro produto disponível na página - Usuário deve ser redirecionado para a página de produto correspondente 
+Adicionar o produto ao carrinho e redirecionar ao carrinho- Usuário deve ser redirecionado para a página de carrinho e o item adicionado deve constar na lista de produtos do mesmo
+Inserir o cep desejado no campo "Calcule o frete:"
+Clicar em "Calcular" - O sistema deve informar 3 opções - retirada, PAC e SEDEX
+Digitar "frete gratis" no campo de cupom de desconto
+Clicar em "Usar cupom" - cupom deve ser aplicado ao carrinho, resultando em aplicar valor R$ 0,00 para a opção "pac" de frete e mensagem "Frete Grátis" deve ser exibida no campo correspondente
+
+1.1 Aplicar cupom fretegratis sem antes informar cep
+Acessar a home - Página home deve ser exibida
+Clicar no primeiro produto disponível na página - Usuário deve ser redirecionado para a página de produto correspondente 
+Adicionar o produto ao carrinho - Usuário deve ser redirecionado para a página de carrinho e o item adicionado deve constar na lista de produtos do mesmo
+Digitar "frete gratis" no campo de cupom de desconto
+Clicar em "Usar cupom" - cupom deve ser aplicado ao carrinho, resultando em exibir mensagem "Frete Grátis" no campo correspondente 
+
+2. Aplicar cupom 30reais em compras >= de R$ 80,00
+Acessar a home - Página home deve ser exibida
+Clicar no primeiro produto disponível na página - Usuário deve ser redirecionado para a página de produto correspondente 
+Adicionar o produto ao carrinho - Usuário deve ser redirecionado para a página de carrinho e o item adicionado deve constar na lista de produtos do mesmo
+Digitar "30reais" no campo de cupom de desconto
+Clicar em "Usar cupom" - cupom deve ser aplicado ao carrinho, resultando subtrair R$ 30,00 do valor subtotal da compra e mensagem com valor do desconto deve ser exibida no campo correspondente
+
+2.1 Aplicar cupom 30reais em compras em compras < de R$ 80,00 
+Acessar a home - Página home deve ser exibida
+Clicar no segundo produto disponível na página - Usuário deve ser redirecionado para a página de produto correspondente 
+Adicionar o produto ao carrinho - Usuário deve ser redirecionado para a página de carrinho e o item adicionado deve constar na lista de produtos do mesmo
+Digitar "30reais" no campo de cupom de desconto
+Clicar em "Usar cupom" - cupom não deve ser aplicado ao valor do carrinho e deve ser exibida uma mensagem de erro "Valor mínimo para uso não atingido" 
+
+
+3. Aplicar cupom 10off informando cep - aplicável ao frete 
+Acessar a home - Página home deve ser exibida
+Clicar no primeiro produto disponível na página - Usuário deve ser redirecionado para a página de produto correspondente 
+Adicionar o produto ao carrinho - Usuário deve ser redirecionado para a página de carrinho e o item adicionado deve constar na lista de produtos do mesmo
+Inserir o cep desejado no campo "Calcule o frete:"
+Clicar em "Calcular" - O sistema deve calcular o frete para 3 opções - retirada, PAC e SEDEX
+Digitar "10off" no campo de cupom de desconto
+Clicar em "Usar cupom" - cupom deve ser aplicado ao carrinho, resultando em aplicar desconto de 10% ao valor total da compra (subtotal + frete)
+
+3.1 Aplicar cupom 10off e alterar qtd de produtos no carrinho 
+Acessar a home - Página home deve ser exibida
+Clicar no primeiro produto disponível na página - Usuário deve ser redirecionado para a página de produto correspondente 
+Adicionar o produto ao carrinho - Usuário deve ser redirecionado para a página de carrinho e o item adicionado deve constar na lista de produtos do mesmo
+Inserir o cep desejado no campo "Calcule o frete:"
+Clicar em "Calcular" - O sistema deve calcular o frete para 3 opções - retirada, PAC e SEDEX
+Digitar "10off" no campo de cupom de desconto
+Clicar em "Usar cupom" - cupom deve ser aplicado ao carrinho, resultando em aplicar desconto de 10% ao valor total da compra (subtotal + frete)
+Alterar qtd do produto para 2 - desconto deve atualizar para corresponder a 10% do novo subtotal
+
+3.2 Aplicar cupom 10off com 2 produtos no carrinho e remover 1 produto 
+Acessar a home - Página home deve ser exibida
+Clicar no primeiro produto disponível na página - Usuário deve ser redirecionado para a página de produto correspondente 
+Adicionar o produto ao carrinho - Usuário deve ser redirecionado para a página de carrinho e o item adicionado deve constar na lista de produtos do mesmo
+Retornar para a home - pagina home deve ser exibida
+Clicar no segundo produto disponível na página - Usuário deve ser redirecionado para a página de produto correspondente 
+Adicionar o produto ao carrinho - Usuário deve ser redirecionado para a página de carrinho e o item adicionado deve constar na lista de produtos do mesmo
+Inserir o cep desejado no campo "Calcule o frete:"
+Clicar em "Calcular" - O sistema deve calcular o frete para 3 opções - retirada, PAC e SEDEX
+Digitar "10off" no campo de cupom de desconto
+Clicar em "Usar cupom" - cupom deve ser aplicado ao carrinho, resultando em aplicar desconto de 10% ao valor total da compra (subtotal + frete)
+Remover o primeiro produto do carrinho - produto deve ser removido da listagem do carrinho e valor do desconto deve atualizar para corresponder a 10% do novo subtotal
+
+
+4. Cupom inexistente
+Acessar a home - Página home deve ser exibida
+Clicar no primeiro produto disponível na página - Usuário deve ser redirecionado para a página de produto correspondente 
+Adicionar o produto ao carrinho - Usuário deve ser redirecionado para a página de carrinho e o item adicionado deve constar na lista de produtos do mesmo
+Digitar "99off" no campo de cupom de desconto
+Clicar em "Usar cupom" - nenhum cupom deve ser aplicado ao carrinho - mensagem de feedback com texto "Cupom não encontrado." deve ser exibida
